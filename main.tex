@@ -1,5 +1,6 @@
 \documentclass[12pt,a4paper,oneside]{book}
 \usepackage[utf8]{inputenc}
+\usepackage{graphicx}
 \usepackage{amsmath}
 \usepackage{amsfonts}
 \usepackage{amssymb}
@@ -25,12 +26,12 @@
 %change Chapter to BAB
 \usepackage{fancyhdr}
 \renewcommand{\contentsname}{DAFTAR ISI}
-\renewcommand{\bibname}{Daftar Pustaka}
+\renewcommand{\bibname}{DAFTAR PUSTAKA}
 
-\renewcommand\thesection{\Alph{section}.}
+\renewcommand\thesection{\Alph{section}}
 \renewcommand\thesubsection{\thesection\arabic{subsection}}
 
-\linespread{2}
+\linespread{1.5}
 
 \usepackage{titlesec}
 \titleformat{\chapter}[display]   
@@ -38,6 +39,10 @@
 \titlespacing*{\chapter}{0pt}{-50pt}{40pt}
 
 \begin{document}
+
+\input{cover}
+
+\newpage
 \frontmatter
 \tableofcontents
 
@@ -64,7 +69,7 @@
 
 \input{sistematika penelitian}
 
-\section{\bibname}
+\section{Daftar Pustaka}
 
 \bibliographystyle{vancouver}
 \bibliography{library}
