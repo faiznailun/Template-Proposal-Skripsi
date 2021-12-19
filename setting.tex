@@ -21,6 +21,11 @@
 
 % Mengatur header dan foother
 \usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhead[L]{}  %mengosongkan head kiri
+\fancyhead[R]{\thepage}  %memberi nomor page head kanan
+\renewcommand{\headrulewidth}{0pt} %menghilangkan garis
+\fancyfoot{} % menghilangkan footer
 
 % change Chapter to BAB
 \renewcommand{\contentsname}{DAFTAR ISI}
