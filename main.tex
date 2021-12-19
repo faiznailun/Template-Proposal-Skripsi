@@ -1,52 +1,15 @@
-\documentclass[12pt,a4paper,oneside]{book}
-\usepackage[utf8]{inputenc}
-\usepackage{graphicx}
-\usepackage{amsmath}
-\usepackage{amsfonts}
-\usepackage{amssymb}
-%
-\usepackage{mathptmx}
-\usepackage[T1]{fontenc}
-\usepackage{indentfirst}
-\usepackage{geometry}
- \geometry{
- left=4cm,
- top=4cm,
- right=3cm,
- bottom=3cm,
- }
-
-% Mengkompres cite
-\usepackage[numbers,sort&compress]{natbib}
-
-% Daftar pustaka jadi section
-\usepackage{etoolbox}
-\patchcmd{\thebibliography}{\chapter*}{\section*}{}{}
-
-%change Chapter to BAB
-\usepackage{fancyhdr}
-\renewcommand{\contentsname}{DAFTAR ISI}
-\renewcommand{\bibname}{DAFTAR PUSTAKA}
-
-\renewcommand\thesection{\Alph{section}}
-\renewcommand\thesubsection{\thesection\arabic{subsection}}
-
-\linespread{1.5}
-
-\usepackage{titlesec}
-\titleformat{\chapter}[display]   
-{\centering\normalfont\large\bfseries}{\chaptertitlename\ \thechapter}{0pt}{\large}   
-\titlespacing*{\chapter}{0pt}{-50pt}{40pt}
+\input{setting}
 
 \begin{document}
 
 \input{cover}
 
+% Halaman daftar isi
 \newpage
 \frontmatter
 \tableofcontents
 
-%\chapter{Pendahuluan}
+% Halaman isi
 \newpage
 \mainmatter
 \input{latar belakang}
