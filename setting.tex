@@ -19,14 +19,15 @@
 % Mengkompres cite
 \usepackage[numbers,sort&compress]{natbib}
 
-% Daftar pustaka jadi section
-%\usepackage{etoolbox}
-%\patchcmd{\thebibliography}{\chapter*}{\section*}{}{}
+% Mengatur header dan foother
+\usepackage{fancyhdr}
 
 % change Chapter to BAB
-\usepackage{fancyhdr}
 \renewcommand{\contentsname}{DAFTAR ISI}
-\renewcommand{\bibname}{DAFTAR PUSTAKA}
+\renewcommand{\bibsection}{\section{Daftar Pustaka}}
+
+% change languange dan pemenggalan kata
+\usepackage[indonesian]{babel}
 
 % numbering on section
 \renewcommand\thesection{\Alph{section}}
@@ -35,7 +36,10 @@
 % baris antar paragraf
 \linespread{1.5}
 
+% mengatur title section
 \usepackage{titlesec}
 \titleformat{\chapter}[display]   
 {\centering\normalfont\large\bfseries}{\chaptertitlename\ \thechapter}{0pt}{\large}   
 \titlespacing*{\chapter}{0pt}{-50pt}{40pt}
+% memberi titik pada numbering section
+\usepackage{secdot}
