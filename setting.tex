@@ -1,13 +1,14 @@
 \documentclass[12pt,a4paper,oneside]{book}
 \usepackage[utf8]{inputenc}
-\usepackage{graphicx}
+\usepackage{graphicx} %input gambar
 \usepackage{amsmath}
 \usepackage{amsfonts}
 \usepackage{amssymb}
 %
 \usepackage{mathptmx}
 \usepackage[T1]{fontenc}
-\usepackage{indentfirst}
+
+% Garis tepi (margin)
 \usepackage{geometry}
  \geometry{
  left=4cm,
@@ -15,6 +16,10 @@
  right=3cm,
  bottom=3cm,
  }
+
+% mengatur 1 cm baris pertama paragraf
+\usepackage{indentfirst}
+\setlength{\parindent}{1cm}
 
 % Mengkompres cite
 \usepackage[numbers,sort&compress]{natbib}
@@ -27,12 +32,13 @@
 \renewcommand{\headrulewidth}{0pt} %menghilangkan garis
 \fancyfoot{} % menghilangkan footer
 
-% change Chapter to BAB
+% change name Daftar Isi, Daftar Pustaka jadi section
 \renewcommand{\contentsname}{DAFTAR ISI}
 \renewcommand{\bibsection}{\section{Daftar Pustaka}}
 
 % change languange dan pemenggalan kata
 \usepackage[indonesian]{babel}
+\sloppy
 
 % numbering on section
 \renewcommand\thesection{\Alph{section}}
@@ -46,5 +52,9 @@
 \titleformat{\chapter}[display]   
 {\centering\normalfont\large\bfseries}{\chaptertitlename\ \thechapter}{0pt}{\large}   
 \titlespacing*{\chapter}{0pt}{-50pt}{40pt}
+
 % memberi titik pada numbering section
 \usepackage{secdot}
+
+% untuk modif numbering
+\usepackage{enumitem}
