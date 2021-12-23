@@ -22,7 +22,7 @@
 \setlength{\parindent}{1cm}
 
 % Mengkompres cite
-\usepackage[numbers,sort&compress]{natbib}
+\usepackage[numbers]{natbib}
 
 % Mengatur header dan foother
 \usepackage{fancyhdr}
@@ -41,7 +41,7 @@
 \sloppy
 
 % numbering on section
-\renewcommand\thesection{\Alph{section}}
+\renewcommand\thesection{\Alph{section}.}
 \renewcommand\thesubsection{\thesection\arabic{subsection}}
 
 % baris antar paragraf
@@ -52,9 +52,6 @@
 \titleformat{\chapter}[display]   
 {\centering\normalfont\large\bfseries}{\chaptertitlename\ \thechapter}{0pt}{\large}   
 \titlespacing*{\chapter}{0pt}{-50pt}{40pt}
-
-% memberi titik pada numbering section
-\usepackage{secdot}
 
 % untuk modif numbering
 \usepackage{enumitem}
