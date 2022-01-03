@@ -4,13 +4,31 @@ Metode penelitian dalam proposal ini adalah metode penelitian dan pengembangan. 
 
 Langkah-langkah yang akan dilakukan dalam penelitian:
 \begin{enumerate}
-	\item Menggunakan bahasa pemrograman \textit{Python} untuk mempermudah pengerjaan.
+	\item Menyiapkan dataset, dalam penelitian ini yang digunakan adalah dataset random
+	\item Selanjutnya menentukan jumlah klaster yaitu sebanyak $n$ klaster
 	
-	\item Menyiapkan dataset random menggunakan "\textbackslash import random" pada \textit{Python} yang akan digunakan sebagai uji coba.
+	Selanjutnya membagi data menggunakan algoritma \textit{k}-means
 	
-	\item Membagi titik pada MTSP menggunakan Algoritma $K$-Means menjadi $m$ klaster sesuai dengan distribusinya.
+	\item Memilih sebanyak $n$ centroid secara acak
+	\item Menghitung jarak data ke centroid dengan rumus \textit{euclidean distance}
+	\begin{equation}
+	d_{xy}=\sqrt{\sum_{i=1}^{n}(x_i-y_i)^{2}}
+	\end{equation}
+	\item Perbarui centroid dengan menghitung nilai rata-rata nilai pada masing-masing klaster
+	\item Kembali ke tahapan 4 jika masih terdapat data yang berpindah klaster atau perubahan nilai centroid
 	
-	\item Menggunakan Algoritma Genetika untuk menemukan rute terpendek untuk masing-masing klaster.
+	Selanjutnya melakukan proses TSP pada setiap klaster yang telah dibagi
+	
+	\item Membuat populasi awal secara random menggunakan data yang telah diklaster
+	\item Melakukan reproduksi dengan crosover dengan peluang 0,95
+	\item Melakukan mutasi pada data dengan peluang 0,01
+	\item Seleksi dengan mode eliminasi
+	
+	\item Menentukan nilai fitness agar mendapatkan solusi akhir yang optimaldengan rumus:
+	\begin{equation}
+	fitness=\frac{10000}{RMSE}
+	\end{equation}
+	\item Iterasi dilakukan untuk generasi berikutnya sampai hasil yang dilakukan optimal atau mendekati optimal.
 	
 	\item Membandingkan penyelesaian MTSP dengan menggunakan algoritma genetika dan $k$-means dibandingkan dengan algoritma genetika tanpa $k$-means
 	
