@@ -2,36 +2,49 @@
 
 Metode penelitian dalam proposal ini adalah metode penelitian dan pengembangan. Melalui metode ini diharapkan dapat mengembangkan algoritma yang diteliti.
 
-Langkah-langkah yang akan dilakukan dalam penelitian:
-\begin{enumerate}
-	\item Menyiapkan dataset, dalam penelitian ini yang digunakan adalah dataset random
-	\item Selanjutnya menentukan jumlah klaster yaitu sebanyak $n$ klaster
-	
-	Selanjutnya membagi data menggunakan algoritma \textit{k}-means
-	
-	\item Memilih sebanyak $n$ centroid secara acak
-	\item Menghitung jarak data ke centroid dengan rumus \textit{euclidean distance}
-	\begin{equation}
-	d_{xy}=\sqrt{\sum_{i=1}^{n}(x_i-y_i)^{2}}
-	\end{equation}
-	\item Perbarui centroid dengan menghitung nilai rata-rata nilai pada masing-masing klaster
-	\item Kembali ke tahapan 4 jika masih terdapat data yang berpindah klaster atau perubahan nilai centroid
-	
-	Selanjutnya melakukan proses TSP pada setiap klaster yang telah dibagi
-	
-	\item Membuat populasi awal secara random menggunakan data yang telah diklaster
-	\item Melakukan reproduksi dengan crosover dengan peluang 0,95
-	\item Melakukan mutasi pada data dengan peluang 0,01
-	\item Seleksi dengan mode eliminasi
-	
-	\item Menentukan nilai fitness agar mendapatkan solusi akhir yang optimaldengan rumus:
-	\begin{equation}
-	fitness=\frac{10000}{RMSE}
-	\end{equation}
-	\item Iterasi dilakukan untuk generasi berikutnya sampai hasil yang dilakukan optimal atau mendekati optimal.
-	
-	\item Membandingkan penyelesaian MTSP dengan menggunakan algoritma genetika dan $k$-means dibandingkan dengan algoritma genetika tanpa $k$-means
-	
-	\item Menganalisi dan mengevaluasi data yang dihasilkan
+\subsection{Data Dalam Penelitian}
+    
+Data yang digunakan dalam penelitian ini adalah data koordinat dari seluruh SMP yang ada di Kabupaten Probolinggo. Data dikumpulkan dari \url{https://data.sekolah-kita.net}. Waktu yang diperlukan peneliti untuk mengumpulkan data dari web tersebut adalah 1 bulan karena data dikumpulkan secara manual.
 
+\subsection{Instrumen Pendukung}
+\begin{enumerate}
+    \item Python
+    
+    Dalam penelitian ini akan digunakan bahasa pemrograman python untuk mempermudah pengerjaan. Bahasa python adalah bahasa pemrograman baru di masa sekarang, karena dalam bahasa ini lebih simple dan singkat dalam membuat program \cite{syahrudin2018input}. Bahasa pemrograman ini merupakan bahasa pemrograman yang paling mudah dipelajari dari pada bahasa pemrograman yang lain.
+    
+    \item Jupyter Notebook
+    
+    Jupyter Notebook adalah aplikasi web gratis yang digunakan untuk membuat dan membagikan dokumen yang memiliki kode, hasil hitungan, visualisasi, dan teks. Notebook ini juga mendukung 3 bahasa pemrograman salah satunya adalah bahasa pemrograman python.
+\end{enumerate}
+
+\subsection{Langkah-langkah Dalam Penelitian}
+\begin{enumerate}
+    \item Menyiapkan dataset yang telah dikumpulkan sebelumnya.
+    \item Selanjutnya menentukan jumlah klaster yaitu sebanyak $n$ klaster. Data yang telah dikumupulkan pada tahap ini akan dibagi menjadi beberapa klaster, metode yang digunakan algoritma \textit{k}-means.
+    \item Langkah-langkah yang digunakan dalam metode \textit{k}-means adalah sebagai berikut
+    \begin{enumerate}
+        \item Memilih sebanyak $n$ \textit{centroid} secara acak, sesuai dengan berapa banyak salesman yang akan ditugaskan
+        \item Menghitung jarak data ke \textit{centroid} dengan rumus \textit{euclidean distance}
+        \begin{equation}
+        d_{xy}=\sqrt{\sum_{i=1}^{n}(x_i-y_i)^{2}}
+        \end{equation}
+        \item Titik-titik lokasi yang tersebar merupakan klaster yang sama dengan titik \textit{centroid} paling dekat
+        \item Perbarui \textit{centroid} tiap klaster yang dihasilkan dengan menghitung nilai koordinat rata-rata titik nilai pada masing-masing klaster.
+        \item Iterasi dilakukan untuk generasi berikutnya sampai yaitu dengan kembali ke tahapan (b) sampai tidak ada perubahan klaster atau perubahan nilai \textit{centroid}
+    \end{enumerate}
+	
+	\item Selanjutnya melakukan proses TSP pada setiap klaster yang telah dibagi, langkah-langkahnya adalah sebagai berikut.
+	\begin{enumerate}
+	    \item Membuat populasi awal secara random menggunakan data yang telah diklaster
+	    \item Melakukan reproduksi dengan metode \textit{crosover} dengan peluang 0,95
+	    \item Melakukan mutasi pada data dengan peluang 0,01
+	    \item Selanjutnya seleksi dengan mode eliminasi
+	    \item Menentukan nilai fitness agar mendapatkan solusi akhir yang optimaldengan rumus:
+	    \begin{equation}
+	    fitness=\frac{10000}{RMSE}
+	    \end{equation}
+	    \item Iterasi dilakukan dengan cara kembali ke tahapan b untuk generasi berikutnya sampai hasil yang dilakukan optimal atau mendekati optimal.
+    \end{enumerate}
+	\item Ketika proses diatas selesai dilakukan maka dihasilkanlah pembagian klaster dan rute terdekat tiap klaster menuju seluruh SMP di Kabupaten Probolinggo
+	\item Menganalisa dan mengevaluasi data yang dihasilkan
 \end{enumerate}

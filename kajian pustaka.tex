@@ -4,7 +4,7 @@
 
 \subsection{\textit{Multiple Traveling Salesman Problem}}
 
-Menurut Al-Omeer dan Ahmed, \textit{Multiple Travelling Salesman Problem} (MTSP) adalah salah satu kombinatorial optimasi masalah, yang dapat didefinisikan sebagai berikut: Ada $m$ jumlah salesman yang harus melakukan perjalanan ke $n$ sejumlah kota dimulai dengan depot dan berakhir di depot yang sama \cite{al2019comparative}. Selanjutnya para salesman harus melakukan perjalanan dari satu kota ke kota lain secara terus menerus tanpa mengulang kota mana saja yang telah dilintasi oleh para salesman dan mempertimbangkan jalur terpendek selama perjalanan tersebut.
+Menurut Al-Omeer dan Ahmed, \textit{Multiple Travelling Salesman Problem} (MTSP) adalah salah satu kombinatorial optimasi masalah, yang dapat didefinisikan sebagai berikut: Ada $m$ jumlah salesman yang harus melakukan perjalanan ke $n$ sejumlah kota dimulai dengan depot dan berakhir di depot yang sama \cite{al2019comparative}. Selanjutnya para salesman harus melakukan perjalanan dari satu kota ke kota lain secara terus menerus tanpa mengulang kota mana saja yang telah dilintasi oleh para salesman dan mempertimbangkan jalur terpendek selama perjalanan tersebut. Metode MTSP sebenarnya banyak sekali, namun yang digunakan dalam penelitian ini adalah algoritma genetika dan algoritma \textit{k}-means.
 
 Contoh solusi MTSP:
 
@@ -22,7 +22,7 @@ Contoh solusi MTSP:
 
 \subsection{Algoritma}
 
-Maulana menyebutkan dalam artikelnya algoritma adalah kumpulan perintah untuk menyelesaikan suatu masalah dan diselesaikan dengan cara sistematis, terstruktur dan logis \cite{maulana2017pembelajaran}
+Maulana menyebutkan dalam artikelnya algoritma adalah kumpulan perintah untuk menyelesaikan suatu masalah dan diselesaikan dengan cara sistematis, terstruktur dan logis \cite{maulana2017pembelajaran}. Algoritma digunakan untuk memcahkan permasalahan yang dialami oleh seorang pengguna program.
 
 \subsection{Algoritma $k$-means}
 
@@ -31,14 +31,15 @@ $K$-Means adalah jenis metode klasifikasi tanpa pengawasan yang mempartisi item 
 Menurut S Monalisa \cite{monalisa2018klasterisasi} tahapan mengklaster menggunakan algoritma \textit{k}-means adalah sebagai berikut:
 
 \begin{enumerate}
-	\item Tentukan jumlah klaster
-	\item Pilih centroid awal secara acak sesuai jumlah klaster
-	\item Hitung jarak data ke centroid dengan rumus \textit{euclidean distance}
+	\item Menentukan banyak klaster sesuai dengan keinginan
+	\item Pilih beberapa \textit{centroid} secara acak sesuai banyak klaster
+	\item Hitung jarak titik ke centroid dengan rumus \textit{euclidean distance}
 	\begin{equation}
 	d_{xy}=\sqrt{\sum_{i=1}^{n}(x_i-y_i)^{2}}
 	\end{equation}
-	\item Perbarui centroid dengan menghitung nilai rata-rata nilai pada masing-masing klaster
-	\item Kembali ke tahapan 3 jika masih terdapat data yang berpindah klaster atau perubahan nilai centroid
+	\item Titik-titik yang tersebar masuk ke klaster yang sama dengan titik \textit{centroid} yang paling dekat
+	\item Perbarui \textit{centroid} dengan menghitung nilai rata-rata nilai pada masing-masing klaster
+	\item Lakukan iterasi sebanyak mungkin dengan kembali ke tahapan 3 sampai tidak ada perubahan klaster atau perubahan nilai \textit{centroid}
 \end{enumerate}
 
 \subsection{Algoritma Genetika}
@@ -48,7 +49,7 @@ Pada artikel Hermanto disebutkan bahwa algoritma genetika adalah algoritma yang 
 Menurut Armanda RS \cite{armanda2016penerapan} dalam artikelnya menyampaikan penyelesaian masalah menggunakan algoritma genetika memerlukan beberapa tahapan sebagai berikut:
 
 \begin{enumerate}
-	\item Membuat populasi awal secara random, dalam penelitian ini yang digunakan adalah data yang telah diklaster menggunakan algoritma \textit{k}-means
+	\item Menyiapkan populasi, dalam penelitian ini yang digunakan adalah data yang telah diklaster menggunakan algoritma \textit{k}-means
 	\item Melakukan reproduksi dengan crosover dan mutasi pada pembentukan awal populasi
 	\item Seleksi dengan metode elitism
 	\item Menentukan nilai fitness agar mendapatkan solusi akhir yang optimal. Berikut merupakan persamaan perhitungan dalam mengetahui nilai fitness pada metode algoritma genetika
